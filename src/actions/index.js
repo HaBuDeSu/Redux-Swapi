@@ -6,10 +6,10 @@ export const FAILURE = "FAILURE";
 
 export const getData = () => dispatch => {
   dispatch({ type: FETCHING });
-  axios.get(`https://swapi.co/api/people/`)
+  axios.get("https://swapi.co/api/people/")
   .then(response => dispatch({type: SUCCESS, payload: response.data.results}))
-  .check(error => dispatch({type: FAILURE, payload: error}))
-}
+  .catch(error => dispatch({type: FAILURE, payload: error}))
+};
 
 // our action creator will be a function that returns a function
 // the url to fetch characters from is `https://swapi.co/api/people/`

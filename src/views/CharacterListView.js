@@ -7,7 +7,7 @@ import { getData } from "../actions"
 class CharacterListView extends React.Component {
 
   componentDidMount() {
-    this.getData
+    this.props.getData()
   }
 
   render() {
